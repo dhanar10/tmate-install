@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -e
+set -o pipefail
+
 API_KEY=$1
 
 if [ -z "$API_KEY" ]; then
