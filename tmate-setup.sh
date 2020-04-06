@@ -10,6 +10,12 @@ if [ -z "$API_KEY" ]; then
 	exit 1
 fi
 
+TEMPORARY_DIRECTORY="$(mktemp -d)" 
+
+trap "rm -rf $TEMPORARY_DIRECTORY" EXIT
+
+pushd "$TEMPORARY_DIRECTORY"
+
 case "$(uname -m)" in
 	x86_64)
 		wget -c 'https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-amd64.tar.xz' -O tmate.tar.xz
@@ -33,8 +39,8 @@ Wants=network-online.target
 
 [Service]
 ExecStart=/usr/local/bin/tmate -F -k $API_KEY -n %i
-User=$(whoami)
-Group=$(whoami)
+User=${SUDO_USER:-$USER}
+Group=${SUDO_USER:-$USER}
 
 [Install]
 WantedBy=multi-user.target
