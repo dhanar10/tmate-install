@@ -7,7 +7,7 @@ Setup a tmate service that runs on boot for unattended terminal access
 To setup a tmate service with your API_KEY and your hostname as the session name
 
 ```
-$ https://github.com/dhanar10/tmate-setup/raw/master/tmate-setup.sh
+$ wget -c https://github.com/dhanar10/tmate-setup/raw/master/tmate-setup.sh
 $ sudo bash tmate-setup.sh API_KEY
 ```
 
