@@ -38,7 +38,9 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/tmate -F -k $API_KEY -n %i
+Environment="API_KEY=$API_KEY"
+WorkingDirectory=$(readlink -f ${SUDO_USER:-$USER})
+ExecStart=/usr/local/bin/tmate -F -k \$API_KEY -n %i
 User=${SUDO_USER:-$USER}
 Group=${SUDO_USER:-$USER}
 
