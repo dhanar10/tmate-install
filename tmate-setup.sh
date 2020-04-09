@@ -39,7 +39,7 @@ Wants=network-online.target
 
 [Service]
 Environment="API_KEY=$API_KEY"
-WorkingDirectory=$(readlink -f ${SUDO_USER:-$USER})
+WorkingDirectory==$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)
 ExecStart=/usr/local/bin/tmate -F -k \$API_KEY -n %i
 User=${SUDO_USER:-$USER}
 Group=${SUDO_USER:-$USER}
