@@ -1,14 +1,14 @@
-# tmate-setup
+# tmate-service
 
-Setup a tmate service that runs on boot for unattended terminal access
+Setup a tmate service that runs on boot for unattended terminal access.
 
-## Usage
+## Setup
 
-To setup a tmate service with your API_KEY and your hostname as the session name
+To setup a tmate service with your API_KEY:
 
 ```
-$ wget -c https://github.com/dhanar10/tmate-setup/raw/master/tmate-setup.sh
-$ sudo bash tmate-setup.sh API_KEY
+$ wget -c https://github.com/dhanar10/tmate-service/raw/master/setup.sh
+$ sudo bash setup.sh API_KEY 
 ```
 
 ## Credits
