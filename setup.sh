@@ -30,6 +30,9 @@ case "$(uname -m)" in
 	x86_64)
 		wget -c 'https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-amd64.tar.xz' -O tmate.tar.xz
 		;;
+        armv6l)
+                wget -c 'https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-arm32v6.tar.xz' -O tmate.tar.xz
+                ;;
 	armv7l)
 		wget -c 'https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-arm32v7.tar.xz' -O tmate.tar.xz
 		;;
